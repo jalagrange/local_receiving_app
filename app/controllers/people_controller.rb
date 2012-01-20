@@ -80,4 +80,11 @@ class PeopleController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def receive
+    params[:person][:destination_numbers].each do |dest_num|
+      Outbox.create(:TextDecoded => params[:person][:text_decoded], :DestinationNumber => dest_num, :SendingTimeOut => Time.now - 5.hours)
+    end
+  end
+
 end

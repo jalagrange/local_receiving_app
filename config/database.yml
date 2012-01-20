@@ -8,12 +8,9 @@
 development:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
-  database: local_development
-  pool: 5
+  database: smsd
   username: root
-  password:
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  password: "12345"
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
