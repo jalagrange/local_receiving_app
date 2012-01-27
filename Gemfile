@@ -41,3 +41,6 @@ group :development, :test do
   gem "letter_opener"
   gem "pry"
 end
+
+gem 'whenever', :require => false
+  
