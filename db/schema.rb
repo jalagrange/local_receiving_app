@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120127140709) do
+ActiveRecord::Schema.define(:version => 20120202195104) do
 
   create_table "daemons", :id => false, :force => true do |t|
     t.text "Start", :null => false
@@ -75,12 +75,12 @@ ActiveRecord::Schema.define(:version => 20120127140709) do
   end
 
   create_table "outbox_temps", :force => true do |t|
-    t.integer  "outbox_id"
+    t.integer  "outbox_id",  :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "outbox_temps", ["outbox_id"], :name => "index_outbox_temps_on_outbox_id"
+  add_index "outbox_temps", ["outbox_id"], :name => "index_outbox_temps_on_outbox_id", :unique => true
 
   create_table "pbk", :primary_key => "ID", :force => true do |t|
     t.integer "GroupID", :default => -1, :null => false
