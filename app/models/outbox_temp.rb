@@ -1,5 +1,7 @@
 class OutboxTemp < ActiveRecord::Base
 
+  belongs_to :outbox
+
   validates_presence_of :outbox
   validates_uniqueness_of :outbox_id
 
@@ -14,6 +16,7 @@ class OutboxTemp < ActiveRecord::Base
         end
       end
     end
+    self.send_status(@sent_items)
   end
 
   def send_status(sent_item_statuses)
@@ -24,13 +27,14 @@ class OutboxTemp < ActiveRecord::Base
     @path = "/receive_status"
     @body = sent_item_statuse.to_json
 
+    binding.pry
+
     request = Net::HTTP::Post.new(@path, initheader = {'Content-Type' =>'application/json'})
     request.body = @body
 
     response = Net::HTTP.new(@host, @port).start {|http| http.request(request) }
    
     puts "Response #{response.code} #{response.message}: #{response.body}"
-
 
 
   end

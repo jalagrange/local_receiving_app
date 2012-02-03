@@ -19,6 +19,15 @@
 
 # Learn more: http://github.com/javan/whenever
 #
+#
+#
+
+set :output, "check_outbox_temps.log"
+
+job_type :awesome,  "cd :path && script/rails runner -e development ':task' :output"
+
+
 every 1.minutes do
-  runnner "OutboxTemp.check_outbox_temps"
+  awesome "OutboxTemp.check_outbox_temps"
 end
+
