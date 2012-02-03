@@ -1,33 +1,34 @@
 class OutboxTemp < ActiveRecord::Base
 
+  require 'net/http'
+
   belongs_to :outbox
 
   validates_presence_of :outbox
   validates_uniqueness_of :outbox_id
 
-  def check_outbox_temps
+  def self.check_outbox_temps
     @sent_items = []
-    Outboxtemp.all.each do |outbox_temp|
-      unless outbox_temp.outbox.nil?
-        sent_item = SentItem.find(outbox_temp.outbox_id) if outbox_temp.outbox.nil?
-        unless ['DeliveryPending', 'DeliveryUnknown'].include?(sent_item.status)
-          @sent_items << [sent_item.id, sent_item.Status]
+    OutboxTemp.all.each do |outbox_temp|
+      if outbox_temp.outbox.nil?
+        sent_item = SentItem.find_by_ID(outbox_temp.outbox_id)
+        unless ['DeliveryPending', 'DeliveryUnknown'].include?(sent_item.Status)
+          @sent_items << [sent_item.ID, sent_item.Status]
           outbox_temp.destroy
         end
       end
     end
-    self.send_status(@sent_items)
+    binding.pry
+    self.send_status(@sent_items) unless @sent_items.empty?
   end
 
-  def send_status(sent_item_statuses)
+  def self.send_status(sent_item_statuses)
 
     @host = 'localhost'
     @port = '3001'
   
-    @path = "/receive_status"
-    @body = sent_item_statuse.to_json
-
-    binding.pry
+    @path = "/receive_statuses"
+    @body = sent_item_statuses.to_json
 
     request = Net::HTTP::Post.new(@path, initheader = {'Content-Type' =>'application/json'})
     request.body = @body
@@ -35,7 +36,6 @@ class OutboxTemp < ActiveRecord::Base
     response = Net::HTTP.new(@host, @port).start {|http| http.request(request) }
    
     puts "Response #{response.code} #{response.message}: #{response.body}"
-
 
   end
 

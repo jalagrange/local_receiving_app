@@ -1,34 +1,141 @@
-/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:88:in `block in materialize': Could not find rake-0.9.2.2 in any of the sources (Bundler::GemNotFound)
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:82:in `map!'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:82:in `materialize'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:90:in `specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:135:in `specs_for'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:124:in `requested_specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/environment.rb:23:in `requested_specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/runtime.rb:11:in `setup'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler.rb:110:in `setup'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/setup.rb:17:in `<top (required)>'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:59:in `require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:59:in `rescue in require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:35:in `require'
-	from /home/sauronnikko/Sites/local_receiving_app/config/boot.rb:6:in `<top (required)>'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
-	from script/rails:5:in `<main>'
-/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:88:in `block in materialize': Could not find rake-0.9.2.2 in any of the sources (Bundler::GemNotFound)
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:82:in `map!'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/spec_set.rb:82:in `materialize'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:90:in `specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:135:in `specs_for'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/definition.rb:124:in `requested_specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/environment.rb:23:in `requested_specs'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/runtime.rb:11:in `setup'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler.rb:110:in `setup'
-	from /home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@global/gems/bundler-1.0.21/lib/bundler/setup.rb:17:in `<top (required)>'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:59:in `require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:59:in `rescue in require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:35:in `require'
-	from /home/sauronnikko/Sites/local_receiving_app/config/boot.rb:6:in `<top (required)>'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
-	from /home/sauronnikko/.rvm/rubies/ruby-1.9.3-p0/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
-	from script/rails:5:in `<main>'
+Response 500 Internal Server Error : <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body { background-color: #fff; color: #333; }
+
+    body, p, ol, ul, td {
+      font-family: helvetica, verdana, arial, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+  </style>
+</head>
+<body>
+
+<h1>Template is missing</h1>
+<p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
+  * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+</p>
+
+
+</body>
+</html>
+Response 500 Internal Server Error : <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body { background-color: #fff; color: #333; }
+
+    body, p, ol, ul, td {
+      font-family: helvetica, verdana, arial, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+  </style>
+</head>
+<body>
+
+<h1>Template is missing</h1>
+<p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
+  * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+</p>
+
+
+</body>
+</html>
+[1] pry(OutboxTemp)> 
+From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
+
+    16:           @sent_items << [sent_item.ID, sent_item.Status]
+    17:           outbox_temp.destroy
+    18:         end
+    19:       end
+    20:     end
+ => 21:     binding.pry
+    22:     self.send_status(@sent_items) unless @sent_items.empty?
+    23:   end
+    24: 
+    25:   def self.send_status(sent_item_statuses)
+    26: 
+
+[1] pry(OutboxTemp)> 
+From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
+
+    16:           @sent_items << [sent_item.ID, sent_item.Status]
+    17:           outbox_temp.destroy
+    18:         end
+    19:       end
+    20:     end
+ => 21:     binding.pry
+    22:     self.send_status(@sent_items) unless @sent_items.empty?
+    23:   end
+    24: 
+    25:   def self.send_status(sent_item_statuses)
+    26: 
+
+Response 500 Internal Server Error : <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body { background-color: #fff; color: #333; }
+
+    body, p, ol, ul, td {
+      font-family: helvetica, verdana, arial, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
+
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+  </style>
+</head>
+<body>
+
+<h1>Template is missing</h1>
+<p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
+  * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+</p>
+
+
+</body>
+</html>
