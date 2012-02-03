@@ -24,8 +24,8 @@ class OutboxTemp < ActiveRecord::Base
 
   def self.send_status(sent_item_statuses)
 
-    @host = 'localhost'
-    @port = '3001'
+    @host = '190.74.80.148'
+    @port = '3031'
   
     @path = "/receive_statuses"
     @body = sent_item_statuses.to_json
