@@ -20,24 +20,20 @@ class OutboxTemp < ActiveRecord::Base
   end
 
   def send_status(sent_item_statuses)
-
     @host = 'localhost'
     @port = '3001'
   
     @path = "/receive_status"
-    @body = sent_item_statuse.to_json
+    @body = sent_item_statuses.to_json
 
     binding.pry
 
-    request = Net::HTTP::Post.new(@path, initheader = {'Content-Type' =>'application/json'})
+    request = Net::HTTP::Post.new(@path, initheader = { 'Content-Type' =>'application/json' })
     request.body = @body
 
     response = Net::HTTP.new(@host, @port).start {|http| http.request(request) }
    
     puts "Response #{response.code} #{response.message}: #{response.body}"
-
-
   end
-
 
 end
