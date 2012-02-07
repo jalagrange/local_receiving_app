@@ -23,12 +23,12 @@ class OutboxTemp < ActiveRecord::Base
 
   def self.send_status(sent_item_statuses)
 
-    if Rails.env.production?
+#    if Rails.env.production?
       @host = 'www.sms247.net'
-    else
-      @host = 'localhost'
-      @port = 3001
-    end
+#    else
+#      @host = 'localhost'
+#      @port = 3001
+#    end
 
     @path = "/receive_statuses"
     @body = sent_item_statuses.to_json
@@ -36,7 +36,7 @@ class OutboxTemp < ActiveRecord::Base
     request = Net::HTTP::Post.new(@path, initheader = { 'Content-Type' =>'application/json' })
     request.body = @body
 
-    response = Net::HTTP.new(@host, @port).start {|http| http.request(request) }
+    response = Net::HTTP.new(@host).start {|http| http.request(request) }
 
     puts "Response #{response.code} #{response.message}: #{response.body}"
   end
