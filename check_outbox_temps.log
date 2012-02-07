@@ -1,3 +1,20 @@
+/usr/lib/ruby/gems/1.9.1/gems/railties-3.1.2/lib/rails/commands/runner.rb:49:in `eval': Connection refused - connect(2) (Errno::ECONNREFUSED)
+	from /usr/lib/ruby/1.9.1/net/http.rb:644:in `open'
+	from /usr/lib/ruby/1.9.1/net/http.rb:644:in `block in connect'
+	from /usr/lib/ruby/1.9.1/timeout.rb:44:in `timeout'
+	from /usr/lib/ruby/1.9.1/timeout.rb:89:in `timeout'
+	from /usr/lib/ruby/1.9.1/net/http.rb:644:in `connect'
+	from /usr/lib/ruby/1.9.1/net/http.rb:637:in `do_start'
+	from /usr/lib/ruby/1.9.1/net/http.rb:626:in `start'
+	from /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb:39:in `send_status'
+	from /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb:21:in `check_outbox_temps'
+	from (eval):1:in `<top (required)>'
+	from /usr/lib/ruby/gems/1.9.1/gems/railties-3.1.2/lib/rails/commands/runner.rb:49:in `eval'
+	from /usr/lib/ruby/gems/1.9.1/gems/railties-3.1.2/lib/rails/commands/runner.rb:49:in `<top (required)>'
+	from /usr/lib/ruby/gems/1.9.1/gems/railties-3.1.2/lib/rails/commands.rb:63:in `require'
+	from /usr/lib/ruby/gems/1.9.1/gems/railties-3.1.2/lib/rails/commands.rb:63:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
 Response 500 Internal Server Error : <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +45,8 @@ Response 500 Internal Server Error : <!DOCTYPE html>
 <h1>Template is missing</h1>
 <p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
   * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
 </p>
 
 
@@ -65,43 +82,13 @@ Response 500 Internal Server Error : <!DOCTYPE html>
 <h1>Template is missing</h1>
 <p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
   * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
 </p>
 
 
 </body>
 </html>
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
 Response 500 Internal Server Error : <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,28 +119,13 @@ Response 500 Internal Server Error : <!DOCTYPE html>
 <h1>Template is missing</h1>
 <p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
   * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
 </p>
 
 
 </body>
 </html>
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
 Response 500 Internal Server Error : <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -184,88 +156,13 @@ Response 500 Internal Server Error : <!DOCTYPE html>
 <h1>Template is missing</h1>
 <p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
   * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
 </p>
 
 
 </body>
 </html>
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
 Response 500 Internal Server Error : <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -296,100 +193,47 @@ Response 500 Internal Server Error : <!DOCTYPE html>
 <h1>Template is missing</h1>
 <p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
   * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/declarative_authorization-0.5.5/app/views&quot;
-  * &quot;/home/sauronnikko/.rvm/gems/ruby-1.9.3-p0@sms/gems/devise-1.5.3/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
 </p>
 
 
 </body>
 </html>
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
+Response 500 Internal Server Error : <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Action Controller: Exception caught</title>
+  <style>
+    body { background-color: #fff; color: #333; }
 
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
+    body, p, ol, ul, td {
+      font-family: helvetica, verdana, arial, sans-serif;
+      font-size:   13px;
+      line-height: 18px;
+    }
 
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      font-size: 11px;
+    }
 
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
+    a { color: #000; }
+    a:visited { color: #666; }
+    a:hover { color: #fff; background-color:#000; }
+  </style>
+</head>
+<body>
 
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
+<h1>Template is missing</h1>
+<p>Missing template sms_statuses/receive_statuses, application/receive_statuses with {:handlers=&gt;[:erb, :builder], :formats=&gt;[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=&gt;[:en, :en]}. Searched in:
+  * &quot;/home/sauronnikko/Sites/sms/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/declarative_authorization-0.5.5/app/views&quot;
+  * &quot;/usr/lib/ruby/gems/1.9.1/gems/devise-1.5.3/app/views&quot;
+</p>
 
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
 
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
-[1] pry(OutboxTemp)> 
-From: /home/sauronnikko/Sites/local_receiving_app/app/models/outbox_temp.rb @ line 21 in Class#check_outbox_temps:
-
-    16:           @sent_items << [sent_item.ID, sent_item.Status]
-    17:           outbox_temp.destroy
-    18:         end
-    19:       end
-    20:     end
- => 21:     binding.pry
-    22:     self.send_status(@sent_items) unless @sent_items.empty?
-    23:   end
-    24: 
-    25:   def self.send_status(sent_item_statuses)
-    26: 
-
+</body>
+</html>

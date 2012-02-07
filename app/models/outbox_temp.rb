@@ -18,14 +18,17 @@ class OutboxTemp < ActiveRecord::Base
         end
       end
     end
-    binding.pry
     self.send_status(@sent_items) unless @sent_items.empty?
   end
 
   def self.send_status(sent_item_statuses)
 
-    @host = '190.74.80.148'
-    @port = '3031'
+	if Rails.env.production?
+    @host = 'www.sms247.net'
+	else
+    @host = 'localhost'
+	@port = 3001
+	end
   
     @path = "/receive_statuses"
     @body = sent_item_statuses.to_json
