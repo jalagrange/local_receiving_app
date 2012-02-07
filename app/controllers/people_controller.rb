@@ -82,12 +82,11 @@ class PeopleController < ApplicationController
     end
 
     def receive
-      @outbox_sms_ids = []
+      
+	@outbox_sms_ids = []
       params[:destination_numbers].each do |dest_num|
         @outbox_sms_ids << Outbox.create(:TextDecoded => params[:text_decoded], :DestinationNumber => dest_num, :SendingTimeOut => Time.now - 1.days).id
       end
-
-      binding.pry
 
       respond_to do |format|
         format.json { render :json => @outbox_sms_ids.to_json }

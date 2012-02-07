@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.2'
+gem 'rails'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -37,7 +37,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "mysql2", "0.3.6"
+  gem "mysql2"
   gem "letter_opener"
   gem "pry"
 end
