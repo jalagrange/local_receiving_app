@@ -13,7 +13,7 @@ class OutboxTemp < ActiveRecord::Base
       if outbox_temp.outbox.nil?
         sent_item = SentItem.find_by_ID(outbox_temp.outbox_id)
         unless ['DeliveryPending', 'DeliveryUnknown'].include?(sent_item.Status)
-          @sent_items << [sent_item.ID, sent_item.Status]
+          @sent_items << [sent_item.ID, sent_item.Status, sent_item.UpdatedInDB]
           outbox_temp.destroy
         end
       end
@@ -23,12 +23,7 @@ class OutboxTemp < ActiveRecord::Base
 
   def self.send_status(sent_item_statuses)
 
-#    if Rails.env.production?
-      @host = 'www.sms247.net'
-#    else
-#      @host = 'localhost'
-#      @port = 3001
-#    end
+    @host = 'www.sms247.net'
 
     @path = "/receive_statuses"
     @body = sent_item_statuses.to_json
