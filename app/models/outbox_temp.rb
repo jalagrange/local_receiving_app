@@ -9,6 +9,7 @@ class OutboxTemp < ActiveRecord::Base
 
   def self.check_outbox_temps
     @sent_items = []
+	@outbox_temps = []
     OutboxTemp.all.each do |outbox_temp|
       if outbox_temp.outbox.nil?
         sent_item = SentItem.find_by_ID(outbox_temp.outbox_id)
@@ -32,6 +33,9 @@ class OutboxTemp < ActiveRecord::Base
     request.body = @body
 
     response = Net::HTTP.new(@host).start {|http| http.request(request) }
+
+	@outbox_temps.each { |outbox_temp| outbox_temp.destroy } if response.code == "200"
+
 
     puts "Response #{response.code} #{response.message}: #{response.body}"
   end
