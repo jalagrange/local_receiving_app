@@ -15,7 +15,7 @@ class OutboxTemp < ActiveRecord::Base
         sent_item = SentItem.find_by_ID(outbox_temp.outbox_id)
         unless ['DeliveryPending', 'DeliveryUnknown'].include?(sent_item.Status)
           @sent_items << [sent_item.ID, sent_item.Status, sent_item.UpdatedInDB]
-          outbox_temp.destroy
+          @outbox_temps << outbox_temp
         end
       end
     end
