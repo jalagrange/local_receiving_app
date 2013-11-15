@@ -1,0 +1,37 @@
+# Configuration file for Gammu SMS Daemon
+
+# Gammu library configuration, see gammurc(5)
+[gammu]
+# Please configure this!
+port = /dev/null
+connection = at
+# Debugging
+#logformat = textall
+
+# SMSD configuration, see gammu-smsdrc(5)
+[smsd]
+
+# Daemon configurations
+debuglevel = 0
+logfile = ~/sms-application/local_receiving_app/gammu/daemon_log.log
+service = sql
+
+# Phone particular options
+checkbattery = 0 # Disabled
+checksignal = 0 # Disabled
+pin = # to do SIM pin
+phonecode = # to do phone unlock code
+phoneid = # to do a sender id for the phone
+receive = false # This phone won't receive messages
+statusfrequency = 0 # Disabled
+
+# Database options
+database = gammu_sms_daemon
+driver = native_mysql
+host = localhost
+password = akdemia_gammu_sms_daemon
+sql = mysql
+username = gammu_sms_daemon
+
+# SQL Service configurations
+[sql]
