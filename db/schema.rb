@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115202521) do
+ActiveRecord::Schema.define(:version => 20131115210016) do
 
   create_table "daemons", :force => true do |t|
     t.text "Start", :null => false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20131115202521) do
     t.datetime "updated_at"
   end
 
-  create_table "inboxes", :force => true do |t|
+  create_table "inbox", :force => true do |t|
     t.datetime "UpdatedInDB",                            :null => false
     t.datetime "ReceivingDateTime",                      :null => false
     t.text     "Text",                                   :null => false
