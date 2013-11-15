@@ -2,8 +2,8 @@ class CreateSentitems < ActiveRecord::Migration
   def change
     create_table :sentitems, :id => false do |t|
       t.timestamp :UpdatedInDB, :null => false
-      t.timestamp :InsertIntoDB, :null => false, :default => Date.new(0,0,0)
-      t.timestamp :SendingDateTime, :null => false, :default => Date.new(0,0,0)
+      t.timestamp :InsertIntoDB, :null => false, :default => 0
+      t.timestamp :SendingDateTime, :null => false, :default => 0
       t.timestamp :DeliveryDateTime, :null => true
       t.text :Text, :null => false
       t.string :DestinationNumber, :null => false, :default => ''

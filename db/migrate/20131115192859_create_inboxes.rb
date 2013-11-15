@@ -3,7 +3,7 @@ class CreateInboxes < ActiveRecord::Migration
     create_table :inboxes do |t|
       t.timestamp :UpdatedInDB, :null => false
       t.timestamp :ReceivingDateTime, :null => false, 
-                                      :default => Date.new(0, 0, 0)
+                                      :default => 0
       t.text :Text, :null => false
       t.string :SenderNumber, :null => false, :default => ''
       t.string :Coding

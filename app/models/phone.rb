@@ -1,4 +1,6 @@
 class Phone < ActiveRecord::Base
+  set_primary_key :IMEI
+
   before_create :set_times
   before_save :set_timestamps
 
