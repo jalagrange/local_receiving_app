@@ -1,6 +1,4 @@
-class SentItem < ActiveRecord::Base
-  set_table_name "sentitems"
-
+class Phone < ActiveRecord::Base
   before_create :set_times
   before_save :set_timestamps
 
@@ -10,8 +8,8 @@ class SentItem < ActiveRecord::Base
         self.InsertIntoDB = Time.now
       end
 
-      if self.SendingDateTime == Date.new(0,0,0)
-        self.SendingDateTime = Time.now
+      if self.TimeOut == Date.new(0,0,0)
+        self.TimeOut = Time.now
       end
     end
 

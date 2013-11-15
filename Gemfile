@@ -6,6 +6,7 @@ gem 'rails'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'devise'
+gem 'therubyracer', :require => 'v8'
 
 # Rails 3.1 - JavaScript
 gem 'jquery-rails'
