@@ -3,8 +3,8 @@
 # Gammu library configuration, see gammurc(5)
 [gammu]
 # Please configure this!
-device = 0x0421:0x0207
-connection = at
+device = /dev/sg2
+connection = dku2
 # Debugging
 #logformat = texat
 
