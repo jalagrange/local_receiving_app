@@ -1,6 +1,7 @@
 .bundle
 db/*.sqlite3
 log/*.log
+gammu/*.log
 tmp/**/*
 config/database.yml
 Thumbs.db
