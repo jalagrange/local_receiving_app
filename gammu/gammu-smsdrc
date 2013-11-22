@@ -3,7 +3,7 @@
 # Gammu library configuration, see gammurc(5)
 [gammu]
 # Please configure this!
-device = /dev/bus/usb/003/012
+device = /dev/tty1
 connection = dku2
 # Debugging
 #logformat = texat
