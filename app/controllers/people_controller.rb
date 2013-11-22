@@ -83,6 +83,7 @@ class PeopleController < ApplicationController
 
     def receive
       @outbox_sms_ids = []
+      binding.pry
       params[:destination_numbers].each do |dest_num|
         @outbox_sms_ids << Outbox.create(:TextDecoded => params[:text_decoded], 
                                          :DestinationNumber => dest_num, 
