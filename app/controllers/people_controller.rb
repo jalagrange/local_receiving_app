@@ -81,9 +81,17 @@ class PeopleController < ApplicationController
       end
     end
 
+    # POST /receive
+    #
+    # Given a series of phone numbers and a message, it transmits the desired
+    # message to all those phone numbers.
+    #
+    # params: destination_numbers -> A JSON array with the pgone numbers that
+    #                                will receive the message
+    #         text_decoded -> The message to be sent
     def receive
-      @outbox_smses = []
       binding.pry
+      @outbox_smses = []
       params[:destination_numbers].each do |dest_num|
         @outbox_smses << Outbox.create(:TextDecoded => params[:text_decoded], 
                                        :DestinationNumber => dest_num, 
