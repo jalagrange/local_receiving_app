@@ -90,7 +90,6 @@ class PeopleController < ApplicationController
     #                                will receive the message
     #         text_decoded -> The message to be sent
     def receive
-      binding.pry
       @outbox_smses = []
       params[:destination_numbers].each do |dest_num|
         @outbox_smses << Outbox.create(:TextDecoded => params[:text_decoded], 

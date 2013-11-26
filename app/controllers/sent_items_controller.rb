@@ -13,7 +13,7 @@ class SentItemsController < ApplicationController
       if sms.nil?
         statuses[id] = nil
       else
-        statuses[id] = sms.status
+        statuses[id] = sms.Status
       end
     end
 
